@@ -1,0 +1,38 @@
+<div class="login-container">
+  <form class="input-form" #loginForm="ngForm">
+    <mat-form-field class="input-full-width">
+      <input matInput type="text" placeholder="Username" [(ngModel)]="username" name="username" required>
+    </mat-form-field>
+
+    <mat-form-field class="input-full-width">
+      <input matInput type="email" placeholder="Email" [(ngModel)]="email" required name="email" (input)=emailChange()>
+    </mat-form-field>
+
+    <mat-form-field class="input-full-width">
+      <input matInput type="password" placeholder="Password" [(ngModel)]="password" required minlength="8" name="password" (input)=passwordChange()>
+    </mat-form-field>
+
+    <mat-form-field class="input-full-width">
+      <input matInput type="password" placeholder="Confirm Password" [(ngModel)]="cpassword" name="cpassword" (input)=cpasswordChange()
+        required>
+    </mat-form-field>
+
+    <mat-form-field class="input-full-width">
+      <input matInput type="text" placeholder="Student ID" [(ngModel)]="studentId" name="studentId" minlength="9" maxlength="9"
+        (input)=studentidChange() required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select placeholder="Major" required [(value)]="major">
+        <mat-option *ngFor="let m of majors" [value]="m.pk">
+          {{ m.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div>{{ validations | json }}</div>
+    <div>{{ signupError | json }}</div>
+
+    <button mat-raised-button color="primary" (click)=submit(loginForm)>Primary</button>
+  </form>
+</div>

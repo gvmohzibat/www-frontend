@@ -1,0 +1,9 @@
+<div class="login-container">
+  <form class="input-form" #newPostForm="ngForm">
+    <mat-form-field class="input-full-width">
+      <textarea matInput type="text" placeholder="Content" [(ngModel)]="content" name="content" required></textarea>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)=submit(newPostForm)>Primary</button>
+  </form>
+</div>
