@@ -1,11 +1,11 @@
 <div class="login-container list-item col-sm-6 offset-sm-3">
   <form class="input-form" #newPostForm="ngForm">
     <!-- <mat-form-field class="input-full-width"> -->
-    <textarea matInput type="text" placeholder="Content" [(ngModel)]="content" name="content" required (ngModelChange)=contentChanged()></textarea>
-    <!-- <textarea [froalaEditor]='options' [(froalaModel)]="content" (ngModelChange)=contentChanged()></textarea> -->
+    <!-- <textarea matInput type="text" placeholder="Content" [(ngModel)]="content" name="content" required (ngModelChange)=contentChanged()></textarea> -->
+    <textarea [froalaEditor]='options' [(froalaModel)]="content" (ngModelChange)=contentChanged()></textarea>
     <!-- </mat-form-field> -->
 
-    <div style="margin-top: 10px;">
+    <div style="margin-top: 30px;">
       <mat-checkbox class="primary" [(ngModel)]="anonymous" name="anonymous">Anonymous</mat-checkbox>
     </div>
 

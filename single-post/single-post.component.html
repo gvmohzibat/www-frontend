@@ -1,4 +1,4 @@
-<mat-card class="post-list-item" *ngIf="creator">
+<mat-card class="post-list-item col-sm-6 offset-sm-3" *ngIf="creator">
   <mat-card-header>
     <mat-card-title>Title</mat-card-title>
     <mat-card-subtitle>
@@ -13,9 +13,18 @@
     </p>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-raised-button (click)=reportPost()>Report</button>
-    <button mat-raised-button [ngClass]="{'active-b': this.myValue === -1}" (click)=dislikePost()>{{dislikes}} Dislike</button>
-    <button mat-raised-button [ngClass]="{'active-b': this.myValue === 1}" (click)=likePost()>{{likes}} Like</button>
-    <button *ngIf="isPostAuthor" mat-raised-button (click)=deletePost()>Delete post</button>
+    <div style="align-items: center;
+    align-content: space-between;
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 30px;">
+      <button mat-raised-button color="accent" (click)=reportPost()>Report</button>
+      <button mat-raised-button [ngClass]="{'active-b': this.myValue === -1}" (click)=dislikePost()>
+        <i class="fa fa-thumbs-down" aria-hidden="true"></i> Dislike {{dislikes}}</button>
+      <button mat-raised-button [ngClass]="{'active-b': this.myValue === 1}" (click)=likePost()>
+        <i class="fa fa-thumbs-up" aria-hidden="true"></i> Like {{likes}}</button>
+      <button *ngIf="isPostAuthor" color="warn" mat-raised-button (click)=deletePost()>Delete post</button>
+    </div>
   </mat-card-actions>
 </mat-card>

@@ -42,7 +42,6 @@ export class NewPostComponent extends PagesParentComponent implements OnInit {
 		);
 	}
 	contentChanged() {
-		console.log('vad');
 		this.preview = this.content;
 		let regex = /#/gi,
 			whiteSpace = /\s/gi,
@@ -52,7 +51,6 @@ export class NewPostComponent extends PagesParentComponent implements OnInit {
 			indices.push(result.index);
 		}
 		// indices.pop();
-		console.log(indices);
 		indices.forEach(ind => {
 			if (ind > this.lastIndex) {
 				for (let i = ind; i <= this.content.length; i++) {
@@ -70,7 +68,7 @@ export class NewPostComponent extends PagesParentComponent implements OnInit {
 				}
 			}
 		});
-		console.log(this.hashtags, this.lastIndex);
+		console.log(this.hashtags);
 		let tempString = this.content;
 		this.hashtags.forEach(h => {
 			tempString = tempString.replace(h, '<span class="hashtag">' + h + '</span>');

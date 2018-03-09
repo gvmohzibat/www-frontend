@@ -22,7 +22,7 @@ export class SinglePostComponent extends PagesParentComponent implements OnInit 
 	creator: any;
 	posts;
 	constructor(private allS: AllServicesService, private route: ActivatedRoute, private auth: AuthService) {
-		super(false);
+		super('Post');
 	}
 	load() {
 		this.allS.getPost(this.id).subscribe(data => {

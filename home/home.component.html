@@ -1,2 +1,33 @@
 <!-- <app-posts-list></app-posts-list> -->
-Home
+<ul class="nav" [hidden]="!isLoggedIn">
+  <li class="nav-item">
+    <img src="assets/photo_2018-03-09_18-53-47.jpg" alt="" style="    width: 40px;
+    border-radius: 100px;
+    margin-left: 200px;">
+  </li>
+  <li class="nav-item">
+    <span class="nav-link active">{{username}}</span>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/notifications">notifications</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/">home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="/profile">Profile</a>
+  </li>
+  <li class="nav-item">
+    <span class="nav-link disabled" (click)=logout()>Logout</span>
+  </li>
+</ul>
+<ul class="nav" [hidden]="isLoggedIn">
+  <li class="nav-item">
+    <a class="nav-link" href="/signup">singup</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/login">login</a>
+  </li>
+
+</ul>
+<router-outlet></router-outlet>

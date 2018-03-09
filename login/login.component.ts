@@ -25,6 +25,7 @@ export class LoginComponent extends PagesParentComponent implements OnInit {
 		this.auth.login(this.username, this.password).subscribe(
 			result => {},
 			error => {
+				console.log('object');
 				this.showFPbtn = true;
 			}
 		);
