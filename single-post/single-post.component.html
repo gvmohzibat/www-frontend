@@ -1,3 +1,21 @@
-<p>
-  single-post works!
-</p>
+<mat-card class="post-list-item" *ngIf="creator">
+  <mat-card-header>
+    <mat-card-title>Title</mat-card-title>
+    <mat-card-subtitle>
+      <a *ngIf="!isAnonymous" [href]="authorLink">{{creator.username}}</a>
+      <span *ngIf="isAnonymous">Anonymous</span>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p [innerHTML]="text">
+      <!-- <a [href]="p.contentLink">{{p.text}}</a> -->
+
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)=reportPost()>Report</button>
+    <button mat-raised-button [ngClass]="{'active-b': this.myValue === -1}" (click)=dislikePost()>{{dislikes}} Dislike</button>
+    <button mat-raised-button [ngClass]="{'active-b': this.myValue === 1}" (click)=likePost()>{{likes}} Like</button>
+    <button *ngIf="isPostAuthor" mat-raised-button (click)=deletePost()>Delete post</button>
+  </mat-card-actions>
+</mat-card>

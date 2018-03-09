@@ -1,8 +1,20 @@
 <div>
-  <div class="post-list-item" *ngFor="let p of posts">
-    <p>
-      <a [href]="p.contentLink">{{p.content}}</a>
-    </p>
-    <a [href]="p.authorLink">{{p.author}}</a>
-  </div>
+  <mat-card class="post-list-item" *ngFor="let p of posts">
+    <mat-card-header>
+      <mat-card-title>Title</mat-card-title>
+      <mat-card-subtitle>
+        <a [href]="authorLink">{{creator.username}}</a>
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        <!-- <a [href]="p.contentLink">{{p.text}}</a> -->
+        {{p.text}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
 </div>

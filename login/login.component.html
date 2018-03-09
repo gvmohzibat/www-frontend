@@ -1,1 +1,40 @@
-logni
+<div [hidden]="showFP" class="col-sm-6 offset-md-3 signup-container list-item">
+  <h2 class="item-title">Login Form</h2>
+  <form class="input-form" #loginForm="ngForm">
+    <mat-form-field class="input-full-width">
+      <input matInput type="text" placeholder="Username" [(ngModel)]="username" name="username" required>
+    </mat-form-field>
+    <!-- <span class="input-invalid" [hidden]="!validations['username']">{{validations['username']}}</span> -->
+
+    <mat-form-field class="input-full-width">
+      <input matInput type="password" placeholder="Password" [(ngModel)]="password" required name="password">
+    </mat-form-field>
+    <!-- <span class="input-invalid" [hidden]="!validations['password']">{{validations['password']}}</span> -->
+
+    <div>
+      <button mat-raised-button color="primary" (click)=submit(loginForm)>Login</button>
+      <button [hidden]="!showFPbtn" mat-raised-button color="warning" (click)=toggleFP()>Forgot Password?</button>
+      <!-- <span class="disablemargintop input-invalid" [hidden]="!validations['formValid']">{{validations['formValid']}}</span> -->
+    </div>
+
+    <!-- <div>{{ signupError | json }}</div> -->
+  </form>
+</div>
+
+
+<div [hidden]="!showFP" class="col-sm-6 offset-md-3 signup-container list-item">
+  <h2 class="item-title">Forgot Password</h2>
+  <form class="input-form" #forgotPasswordForm="ngForm">
+    <mat-form-field class="input-full-width">
+      <input matInput type="email" placeholder="Email" [(ngModel)]="email" name="email" required>
+    </mat-form-field>
+    <!-- <span class="input-invalid" [hidden]="!validations['username']">{{validations['username']}}</span> -->
+
+    <div>
+      <button mat-raised-button color="primary" (click)=forgot(forgotPasswordForm)>Send email</button>
+      <!-- <span class="disablemargintop input-invalid" [hidden]="!validations['formValid']">{{validations['formValid']}}</span> -->
+    </div>
+
+    <!-- <div>{{ signupError | json }}</div> -->
+  </form>
+</div>

@@ -1,6 +1,6 @@
 <div class="col-sm-6 offset-md-3 signup-container list-item">
   <h2 class="item-title">Signup Form</h2>
-  <form class="input-form" #loginForm="ngForm">
+  <form class="input-form" #signupForm="ngForm">
     <mat-form-field class="input-full-width">
       <input matInput type="text" placeholder="Username" [(ngModel)]="username" name="username" required>
     </mat-form-field>
@@ -40,7 +40,7 @@
     <!-- <div>{{ validations | json }}</div> -->
 
     <div>
-      <button mat-raised-button color="primary" (click)=submit(loginForm)>Signup</button>
+      <button mat-raised-button color="primary" (click)=submit(signupForm)>Signup</button>
       <span class="disablemargintop input-invalid" [hidden]="!validations['formValid']">{{validations['formValid']}}</span>
     </div>
 
