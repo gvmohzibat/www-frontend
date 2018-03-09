@@ -10,24 +10,24 @@ import { UtilityService } from '../services/utility.service';
 //   styleUrls: ['./pages-parent.component.scss']
 // })
 export abstract class PagesParentComponent implements OnDestroy {
-  protected subscriptions: any[] = [];
-  protected endDate: string;
-  protected startDate: string;
-  protected appId: any;
-  protected utilityService: UtilityService;
-  protected constants: ConstantsService;
-  constructor(pageTitle) {
-    this.utilityService = AppInjector.get(UtilityService);
-    this.constants = AppInjector.get(ConstantsService);
-    if (pageTitle) this.utilityService.setTitle(pageTitle);
+	protected subscriptions: any[] = [];
+	protected endDate: string;
+	protected startDate: string;
+	protected appId: any;
+	protected utilityService: UtilityService;
+	protected constants: ConstantsService;
+	constructor(pageTitle) {
+		this.utilityService = AppInjector.get(UtilityService);
+		this.constants = AppInjector.get(ConstantsService);
+		if (pageTitle) this.utilityService.setTitle(pageTitle);
 
-    // this.subscriptions.push();
-  }
+		// this.subscriptions.push();
+	}
 
-  abstract load(change?);
-  ngOnDestroy() {
-    this.subscriptions.forEach(sub => {
-      sub.unsubscribe();
-    });
-  }
+	abstract load(change?);
+	ngOnDestroy() {
+		this.subscriptions.forEach(sub => {
+			sub.unsubscribe();
+		});
+	}
 }

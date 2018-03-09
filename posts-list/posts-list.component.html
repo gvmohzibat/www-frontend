@@ -1,0 +1,8 @@
+<div>
+  <div class="post-list-item" *ngFor="let p of posts">
+    <p>
+      <a [href]="p.contentLink">{{p.content}}</a>
+    </p>
+    <a [href]="p.authorLink">{{p.author}}</a>
+  </div>
+</div>

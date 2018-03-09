@@ -19,7 +19,7 @@ export class SignupComponent extends PagesParentComponent implements OnInit {
   test: any;
   validations = {};
   constructor(private signupService: SignupService, private router: Router) {
-    super('ثبت نام');
+    super('Signup');
   }
 
   ngOnInit() {
@@ -48,7 +48,7 @@ export class SignupComponent extends PagesParentComponent implements OnInit {
         data => {
           let result = data.plain();
           console.log(result);
-          this.utilityService.success('با موفقیت انجام شد', 'وارد شدید');
+          this.utilityService.success('You\'ve been signed up successfully', 'Registeration completed');
           this.router.navigate(['/login']);
         },
         error => {
@@ -62,7 +62,7 @@ export class SignupComponent extends PagesParentComponent implements OnInit {
   }
   emailChange() {
     if (this.email && this.email.endsWith('@ut.ac.ir')) delete this.validations['email'];
-    else this.validations['email'] = 'Email should start with ut.ac.ir';
+    else this.validations['email'] = 'Email should start with @ut.ac.ir';
   }
   passwordChange() {
     // let passRe = /[a-zA-Z1-9!@#$%^&*(){}[]]/gi;
@@ -88,6 +88,6 @@ export class SignupComponent extends PagesParentComponent implements OnInit {
   }
   studentidChange() {
     if (this.studentId && this.studentId.length === 9) delete this.validations['studentid'];
-    else this.validations['studentid'] = 'Student ID must have 9 characters length';
+    else this.validations['studentid'] = 'Student ID must have 9 numbers length';
   }
 }
