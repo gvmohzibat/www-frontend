@@ -1,0 +1,14 @@
+<!-- <mat-grid-list cols="36" rowHeight="fit" style="height: 98vh; width: 260%" gutterSize="3px">
+  <mat-grid-tile *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows">
+    <div class="imagegrid" [style.backgroundImage]="'url(../../../assets/' + tile.src + ')'" [ngClass]="{'topBG': tile.top, 'rightBG': tile.right, 'leftBG': tile.left, 'bottomBG': tile.bottom}">
+      <span>{{tile.i}}</span>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list> -->
+<mat-grid-list cols="10" rowHeight="fit" style="height: 98vh; width: 100%" gutterSize="3px">
+  <mat-grid-tile *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows">
+    <div class="imagegrid" [style.backgroundImage]="'url(../../../assets/khabgah/' + tile.src + ')'" [ngClass]="{'topBG': tile.top, 'rightBG': tile.right, 'leftBG': tile.left, 'bottomBG': tile.bottom}">
+      <!-- <span>{{tile.i}}</span> -->
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>
